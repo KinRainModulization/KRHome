@@ -1,0 +1,1 @@
+../../../KRPublishLibrary/KRPublishLibrary/KRPublishLibrary/Publish/Library/AFNetworking/AFSecurityPolicy.h
