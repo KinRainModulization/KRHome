@@ -1,1 +1,0 @@
-../../../KRPublishLibrary/KRPublishLibrary/KRPublishLibrary/Publish/Library/AFNetworking/AFNetworkReachabilityManager.h
