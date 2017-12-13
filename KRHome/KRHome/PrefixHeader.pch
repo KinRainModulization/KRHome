@@ -9,16 +9,16 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-#import <Masonry.h>
+#import <KRPublishLibrary/Masonry.h>
 
-#import <Macros.h>
+#import <KRPublishLibrary/Macros.h>
 
-#import <NetworkTool.h>
-#import <PublicTools.h>
+#import <KRPublishLibrary/NetworkTool.h>
+#import <KRPublishLibrary/PublicTools.h>
 
-#import <UIView+Extension.h>
-#import <UILabel+Extension.h>
-#import <UIButton+Extension.h>
-#import <NSObject+Log.h>
+#import <KRPublishLibrary/UIView+Extension.h>
+#import <KRPublishLibrary/UILabel+Extension.h>
+#import <KRPublishLibrary/UIButton+Extension.h>
+#import <KRPublishLibrary/NSObject+Log.h>
 
 #endif

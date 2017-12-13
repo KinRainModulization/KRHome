@@ -7,7 +7,7 @@
 //
 
 #import "KRHomeController.h"
-#import <LXProgressHUD.h>
+#import <KRPublishLibrary/LXProgressHUD.h>
 
 #define kUserInfo @"kUserInfo"
 
@@ -30,9 +30,9 @@
     [PublicTools setData:params toUserDefaultsKey:kUserInfo];
     
     [[NetworkTool sharedNetworkTool] POST:@"?method=msg.readNum" parameters:nil success:^(id data) {
-        MLog(@"%@",data);
+        NSLog(@"%@",data);
     } failure:^(NSError *error) {
-        MLog(@"==>%@",error);
+        NSLog(@"==>%@",error);
     }];
     
     UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
