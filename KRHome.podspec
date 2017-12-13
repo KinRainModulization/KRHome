@@ -7,6 +7,7 @@ s.description  = <<-DESC
                     DESC
 
 s.homepage     = "https://github.com/KinRainModulization/KRHome.git"
+# s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 s.license      = "MIT"                #开源协议
 s.author       = { "linyi31" => "linyi@jd.com" }
 
