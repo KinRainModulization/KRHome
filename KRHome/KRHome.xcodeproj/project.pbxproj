@@ -573,7 +573,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8TVSF6Q9MU;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch/";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Pods/KRPublishLibrary/KRPublishLibrary/KRPublishLibrary/PrefixHeader.pch/";
 				INFOPLIST_FILE = KRHome/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -590,7 +590,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8TVSF6Q9MU;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch/";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Pods/KRPublishLibrary/KRPublishLibrary/KRPublishLibrary/PrefixHeader.pch/";
 				INFOPLIST_FILE = KRHome/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
