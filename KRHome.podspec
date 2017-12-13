@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
 s.name         = "KRHome"
 s.version      = "0.0.1"
-s.summary      = "Home Module"
+s.summary      = "KRHome"
 s.description  = <<-DESC
-                    首页模块私有库
-                    DESC
+轻雨首页模块私有库
+DESC
 
 s.homepage     = "https://github.com/KinRainModulization/KRHome.git"
 # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
