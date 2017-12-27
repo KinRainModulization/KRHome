@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  KRHomeHeaderView.h
 //  KRHome
 //
-//  Created by LX on 2017/12/11.
+//  Created by LX on 2017/12/26.
 //  Copyright © 2017年 Ace. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface KRHomeHeaderView : UIView
 
 @end
-
