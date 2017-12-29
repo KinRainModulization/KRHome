@@ -7,11 +7,12 @@
 //
 
 #import "KRProjectController.h"
+#import "KRProductCell.h"
 
 #define kSubViewH SCREEN_HEIGHT - NAV_BAR_HEIGHT - kPageMenuH
 
 static const CGFloat kPageMenuH = 50;
-static NSString *kProjectCellIdentifier = @"kProjectCellIdentifier";
+static NSString *kProductCellIdentifier = @"kProductCellIdentifier";
 
 @interface KRProjectController ()
 
@@ -25,14 +26,13 @@ static NSString *kProjectCellIdentifier = @"kProjectCellIdentifier";
     self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-NAV_BAR_HEIGHT-kPageMenuH);
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.tableView.rowHeight = 140;
     self.tableView.showsVerticalScrollIndicator = NO;
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kProjectCellIdentifier];
+    [self.tableView registerClass:[KRProductCell class] forCellReuseIdentifier:kProductCellIdentifier];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pageTitleViewToTop) name:@"HomeHeaderViewToTopNotification" object:nil];
     
 //    [self.tableView reloadData];
-    
-    self.view.backgroundColor = [UIColor colorWithRed:((float)arc4random_uniform(256) / 255.0) green:((float)arc4random_uniform(256) / 255.0) blue:((float)arc4random_uniform(256) / 255.0) alpha:1.0];
 }
 
 //- (void)viewDidLayoutSubviews {
@@ -57,11 +57,11 @@ static NSString *kProjectCellIdentifier = @"kProjectCellIdentifier";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kProjectCellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kProductCellIdentifier forIndexPath:indexPath];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kProjectCellIdentifier];
+        cell = [[KRProductCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kProductCellIdentifier];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"第%zd行",indexPath.row];
+//    cell.textLabel.text = [NSString stringWithFormat:@"第%zd行",indexPath.row];
     return cell;
 }
 

@@ -16,7 +16,11 @@
 #define kUserInfo @"kUserInfo"
 #define kSubViewH SCREEN_HEIGHT - NAV_BAR_HEIGHT - kPageMenuH
 
-static const CGFloat kHeaderViewH = 300;
+//#define kHeaderViewH HomeBannerHeight + HomePicNavsHeight + HomeStoresHeight + HomeMargin * 3
+#define kHeaderViewH round(HomeBannerHeight + HomePicNavsHeight + HomeStoresHeight + HomeMargin * 3)
+
+//static const CGFloat kHeaderViewH = 700;
+
 static const CGFloat kPageMenuH = 50;
 
 static NSString *kPageScrollCellIdentifier = @"kPageScrollCellIdentifier";
@@ -40,6 +44,7 @@ static NSString *kPageScrollCellIdentifier = @"kPageScrollCellIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    MLog(@"头部==%f",kHeaderViewH);
     // nav
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 52, 44)];
     UIImageView *logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"qylogo"]];

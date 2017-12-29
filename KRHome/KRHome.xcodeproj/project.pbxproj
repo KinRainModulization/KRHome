@@ -43,6 +43,10 @@
 		165348711FF378E300DC98AE /* PGIndexBannerSubiew.m in Sources */ = {isa = PBXBuildFile; fileRef = 1653486F1FF378E300DC98AE /* PGIndexBannerSubiew.m */; };
 		165348741FF37B4000DC98AE /* KRCustomBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 165348731FF37B4000DC98AE /* KRCustomBannerView.m */; };
 		165348781FF3800C00DC98AE /* EllipsePageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 165348771FF3800B00DC98AE /* EllipsePageControl.m */; };
+		165DD9BE1FF5D4610032B153 /* KRPicNavsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 165DD9BD1FF5D4610032B153 /* KRPicNavsView.m */; };
+		165DD9C11FF5F1330032B153 /* KRStoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 165DD9C01FF5F1330032B153 /* KRStoreCell.m */; };
+		165DD9C41FF62D530032B153 /* KRProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 165DD9C31FF62D530032B153 /* KRProductCell.m */; };
+		165DD9C71FF637DE0032B153 /* KRCustomPriceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 165DD9C61FF637DE0032B153 /* KRCustomPriceView.m */; };
 		4C6B8AD50ACAEFFC15BC9E4E /* libPods-KRHome.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3209ED418AD622D6C35438B7 /* libPods-KRHome.a */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +141,14 @@
 		165348731FF37B4000DC98AE /* KRCustomBannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRCustomBannerView.m; sourceTree = "<group>"; };
 		165348761FF3800B00DC98AE /* EllipsePageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EllipsePageControl.h; sourceTree = "<group>"; };
 		165348771FF3800B00DC98AE /* EllipsePageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EllipsePageControl.m; sourceTree = "<group>"; };
+		165DD9BC1FF5D4610032B153 /* KRPicNavsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRPicNavsView.h; sourceTree = "<group>"; };
+		165DD9BD1FF5D4610032B153 /* KRPicNavsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRPicNavsView.m; sourceTree = "<group>"; };
+		165DD9BF1FF5F1330032B153 /* KRStoreCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRStoreCell.h; sourceTree = "<group>"; };
+		165DD9C01FF5F1330032B153 /* KRStoreCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRStoreCell.m; sourceTree = "<group>"; };
+		165DD9C21FF62D530032B153 /* KRProductCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRProductCell.h; sourceTree = "<group>"; };
+		165DD9C31FF62D530032B153 /* KRProductCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRProductCell.m; sourceTree = "<group>"; };
+		165DD9C51FF637DE0032B153 /* KRCustomPriceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRCustomPriceView.h; sourceTree = "<group>"; };
+		165DD9C61FF637DE0032B153 /* KRCustomPriceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRCustomPriceView.m; sourceTree = "<group>"; };
 		3209ED418AD622D6C35438B7 /* libPods-KRHome.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KRHome.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4148B64431B1DE4CB1D43157 /* Pods-KRHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KRHome.release.xcconfig"; path = "Pods/Target Support Files/Pods-KRHome/Pods-KRHome.release.xcconfig"; sourceTree = "<group>"; };
 		EAE8BA7F3708C2531F4D9556 /* Pods-KRHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KRHome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KRHome/Pods-KRHome.debug.xcconfig"; sourceTree = "<group>"; };
@@ -273,6 +285,10 @@
 				165347861FF1E64A00DC98AE /* KRHomeHeaderView.m */,
 				165348721FF37B4000DC98AE /* KRCustomBannerView.h */,
 				165348731FF37B4000DC98AE /* KRCustomBannerView.m */,
+				165DD9BC1FF5D4610032B153 /* KRPicNavsView.h */,
+				165DD9BD1FF5D4610032B153 /* KRPicNavsView.m */,
+				165DD9C51FF637DE0032B153 /* KRCustomPriceView.h */,
+				165DD9C61FF637DE0032B153 /* KRCustomPriceView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -393,6 +409,10 @@
 		165348511FF222FB00DC98AE /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				165DD9BF1FF5F1330032B153 /* KRStoreCell.h */,
+				165DD9C01FF5F1330032B153 /* KRStoreCell.m */,
+				165DD9C21FF62D530032B153 /* KRProductCell.h */,
+				165DD9C31FF62D530032B153 /* KRProductCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -628,8 +648,10 @@
 				165348781FF3800C00DC98AE /* EllipsePageControl.m in Sources */,
 				165348541FF2241500DC98AE /* KRProjectController.m in Sources */,
 				165347C61FF1F1D300DC98AE /* MJRefreshGifHeader.m in Sources */,
+				165DD9C11FF5F1330032B153 /* KRStoreCell.m in Sources */,
 				1653478B1FF1EDF100DC98AE /* SPPageMenu.m in Sources */,
 				165347CD1FF1F1D300DC98AE /* UIScrollView+MJRefresh.m in Sources */,
+				165DD9C41FF62D530032B153 /* KRProductCell.m in Sources */,
 				165347841FF1E02600DC98AE /* KRContainerTableView.m in Sources */,
 				165348701FF378E300DC98AE /* NewPagedFlowView.m in Sources */,
 				165347BF1FF1F1D300DC98AE /* MJRefreshHeader.m in Sources */,
@@ -643,6 +665,7 @@
 				165347CC1FF1F1D300DC98AE /* UIScrollView+MJExtension.m in Sources */,
 				1615A46F1FDE93F800AC5780 /* AppDelegate.m in Sources */,
 				165347BE1FF1F1D300DC98AE /* MJRefreshFooter.m in Sources */,
+				165DD9BE1FF5D4610032B153 /* KRPicNavsView.m in Sources */,
 				165347BD1FF1F1D300DC98AE /* MJRefreshComponent.m in Sources */,
 				165347C31FF1F1D300DC98AE /* MJRefreshBackGifFooter.m in Sources */,
 				165347C81FF1F1D300DC98AE /* MJRefreshStateHeader.m in Sources */,
@@ -650,6 +673,7 @@
 				165347C71FF1F1D300DC98AE /* MJRefreshNormalHeader.m in Sources */,
 				165347C11FF1F1D300DC98AE /* MJRefreshAutoNormalFooter.m in Sources */,
 				165348741FF37B4000DC98AE /* KRCustomBannerView.m in Sources */,
+				165DD9C71FF637DE0032B153 /* KRCustomPriceView.m in Sources */,
 				1615A4AE1FDF77A900AC5780 /* KRHomeController.m in Sources */,
 				165347871FF1E64A00DC98AE /* KRHomeHeaderView.m in Sources */,
 			);
