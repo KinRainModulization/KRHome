@@ -8,26 +8,27 @@
 
 #import "KRHomeController.h"
 #import <KRPublishLibrary/LXProgressHUD.h>
+#import "KRHomeNavBar.h"
 #import "KRContainerTableView.h"
 #import "KRHomeHeaderView.h"
 #import "SPPageMenu.h"
 #import "KRProjectController.h"
+#import "GeoManager.h"
+#import "KRCitiesController.h"
 
-#define kUserInfo @"kUserInfo"
+
+#define kUserInfo @"UserInfo"
+#define kCurrentCityKey @"CurrentCity"
 #define kSubViewH SCREEN_HEIGHT - NAV_BAR_HEIGHT - kPageMenuH
-
-//#define kHeaderViewH HomeBannerHeight + HomePicNavsHeight + HomeStoresHeight + HomeMargin * 3
 #define kHeaderViewH round(HomeBannerHeight + HomePicNavsHeight + HomeStoresHeight + HomeMargin * 3)
-
-//static const CGFloat kHeaderViewH = 700;
-
 static const CGFloat kPageMenuH = 50;
-
 static NSString *kPageScrollCellIdentifier = @"kPageScrollCellIdentifier";
 
 @interface KRHomeController () <UITableViewDelegate, UITableViewDataSource, SPPageMenuDelegate>
 
 @property (nonatomic, strong) NSArray *pageArray;
+
+@property (nonatomic, strong) KRHomeNavBar *navBar;
 
 @property (nonatomic, strong) KRContainerTableView *containerTableView;
 
@@ -38,19 +39,36 @@ static NSString *kPageScrollCellIdentifier = @"kPageScrollCellIdentifier";
 @property (nonatomic, strong) SPPageMenu *pageMenuView;
 
 @property (nonatomic, strong) UIScrollView *childVCScrollView;
+
+@property (nonatomic, strong) GeoManager *locationManager;
+
+@property (nonatomic, strong) NSDictionary *city;
 @end
 
 @implementation KRHomeController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    MLog(@"头部==%f",kHeaderViewH);
-    // nav
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 52, 44)];
-    UIImageView *logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"qylogo"]];
-    logoView.center = titleView.center;
-    [titleView addSubview:logoView];
-    self.navigationItem.titleView = titleView;
+    
+    [self.locationManager configure:@"49722449b155b0607f20176277f556bc"];
+
+    [self prepareUI];
+    
+    [self locateCity];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(subTableViewDidScroll:) name:@"HomeSubTableViewDidScrollNotification" object:nil];
+}
+
+- (void)prepareUI {
+    // navBar
+//    NSDictionary *currentCity = [PublicTools getDataFromUserDefaultsWithKey:kCurrentCityKey];
+//    NSString *title = currentCity ? currentCity[@"city"] : @"定位中...";
+//    self.navBar = [[KRHomeNavBar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, NAV_BAR_HEIGHT) withTitle:title];
+    self.navigationItem.titleView = self.navBar;
+    WEAK_SELF;
+    self.navBar.citySelectBlock = ^{
+        [weakSelf handleCitySelect];
+    };
     
     [self.view addSubview:self.containerTableView];
     self.containerTableView.tableHeaderView = self.headerView;
@@ -60,8 +78,60 @@ static NSString *kPageScrollCellIdentifier = @"kPageScrollCellIdentifier";
         [self addChildViewController:vc];
     }
     [self.pageScrollView addSubview:self.childViewControllers[0].view];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(subTableViewDidScroll:) name:@"HomeSubTableViewDidScrollNotification" object:nil];
+}
+
+- (void)locateCity {
+    // 请求已开通城市列表
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        NSDictionary *defaultCity = @{@"code":@"500100",@"city":@"沈阳"};
+        NSArray *servingCities = @[@{@"code":@"100010",@"city":@"北京"},@{@"code":@"20000",@"city":@"广州"}];
+        [self.locationManager requestLocationWithReGeocode:YES completionBlock:^(NSDictionary *location, NSError *error) {            
+            NSDictionary *currentCity = [PublicTools getDataFromUserDefaultsWithKey:kCurrentCityKey];
+            
+            if (error) {
+                if ([error.userInfo[@"info"] isEqualToString:@"AuthorizationStatusDenied"]) {//不允许定位
+                    self.city = currentCity ? currentCity : defaultCity;
+                    [self alertWithTitle:@"您还未开启定位" Message:@"美丽从定位开始，请在设置>轻雨>定位服务中开启" leftText:@"暂不" rightText:@"去设置" handler:^(UIAlertAction *action) {
+                        NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+                        if( [[UIApplication sharedApplication] canOpenURL:url] ) {
+                            [[UIApplication sharedApplication] openURL:url];
+                        }
+                    }];
+                }
+                return;
+            }
+            
+            NSString *locatedCity = [location[@"city"] stringByReplacingOccurrencesOfString:@"市" withString:@""];
+            NSDictionary *servingCity = nil;
+            for (NSDictionary *city in servingCities) {
+                if ([locatedCity isEqualToString:city[@"city"]]) {
+                    servingCity = city;
+                }
+            }
+            
+            // 首次加载
+            if (!currentCity) {
+                self.city = servingCity ? servingCity : defaultCity;
+                if (!servingCity) {
+                    [self alertWithTitle:@"定位城市未开通服务" Message:[NSString stringWithFormat:@"定位城市“%@”暂未开通服务，请选择其他服务城市进行浏览",locatedCity] leftText:nil rightText:@"我知道了" handler:nil];
+                }
+                return;
+            }
+            
+            // ?
+            self.city = currentCity;
+            
+            // 城市变更且开通服务
+            if (![currentCity[@"city"] isEqualToString:locatedCity] && servingCity) {
+                [self alertWithTitle:@"切换定位城市" Message:[NSString stringWithFormat:@"定位城市已变更为“%@”，是否切换至“%@”？",locatedCity,locatedCity] leftText:@"否" rightText:@"是" handler:^(UIAlertAction *action) {
+                    self.city = servingCity;
+                }];
+                MLog(@"城市变更且开通服务 = %@",self.city);
+            }
+        }];
+    });
+
 }
 
 - (void)loadData {
@@ -78,6 +148,23 @@ static NSString *kPageScrollCellIdentifier = @"kPageScrollCellIdentifier";
             self.hiddenNetworkErrorView = YES;
         });
     }
+}
+
+- (void)alertWithTitle:(NSString *)title Message:(NSString *)message leftText:(NSString *)leftText rightText:(NSString *)rightText handler:(void (^ __nullable)(UIAlertAction *action))handler {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    if (leftText.length) {
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:leftText style:UIAlertActionStyleCancel handler:nil];
+        [alertController addAction:cancelAction];
+    }
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:rightText style:UIAlertActionStyleDefault handler:handler];
+    [alertController addAction:okAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+#pragma mark - Action
+
+- (void)handleCitySelect {
+    [self.navigationController pushViewController:[[KRCitiesController alloc] init] animated:YES];
 }
 
 #pragma mark - Notification
@@ -159,6 +246,23 @@ static NSString *kPageScrollCellIdentifier = @"kPageScrollCellIdentifier";
 
 #pragma mark - Setter/Getter
 
+- (void)setCity:(NSDictionary *)city {
+    _city = city;
+    MLog(@"city=%@",city);
+    [PublicTools setData:city toUserDefaultsKey:kCurrentCityKey];
+    self.navBar.cityName = city[@"city"];
+    // 重新加载数据
+}
+
+- (KRHomeNavBar *)navBar {
+    if (!_navBar) {
+        NSDictionary *currentCity = [PublicTools getDataFromUserDefaultsWithKey:kCurrentCityKey];
+        NSString *title = currentCity ? currentCity[@"city"] : @"定位中...";
+        _navBar = [[KRHomeNavBar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, NAV_BAR_HEIGHT) withTitle:title];
+    }
+    return _navBar;
+}
+
 - (KRContainerTableView *)containerTableView {
     if (!_containerTableView) {
         _containerTableView = [[KRContainerTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
@@ -211,6 +315,13 @@ static NSString *kPageScrollCellIdentifier = @"kPageScrollCellIdentifier";
         _pageArray = @[@"标题1",@"标题2",@"标题3",@"标题4",@"标题5",@"标题6"];
     }
     return _pageArray;
+}
+
+- (GeoManager *)locationManager {
+    if (!_locationManager) {
+        _locationManager = [[GeoManager alloc] init];
+    }
+    return _locationManager;
 }
 
 - (void)dealloc {

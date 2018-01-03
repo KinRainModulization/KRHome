@@ -32,11 +32,15 @@
 - (void)prepareUI {
     UIView *contentView = [[UIView alloc] init];
     
+    UIView *lineView = [[UIView alloc] init];
+    lineView.backgroundColor = GLOBAL_BACKGROUND_COLOR;
+    
     [self addSubview:contentView];
     [contentView addSubview:self.productImageView];
     [contentView addSubview:self.productNameLabel];
     [contentView addSubview:self.productBriefLabel];
     [contentView addSubview:self.priceView];
+    [contentView addSubview:lineView];
     
     [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self).insets(UIEdgeInsetsMake(10, 11.5, 10, 10));
@@ -54,13 +58,19 @@
         make.top.equalTo(_productNameLabel.mas_bottom).offset(10);
         make.leading.trailing.equalTo(_productNameLabel);
     }];
-    MLog(@"test====%@",NSStringFromCGRect(_priceView.frame));
     [_priceView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.trailing.equalTo(contentView).offset(-_priceView.width);
         make.bottom.equalTo(contentView).offset(-(20+_priceView.height*0.5));
     }];
-
+    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.bottom.equalTo(self);
+        make.height.mas_equalTo(5);
+    }];
 }
+
+//- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+//    [super setSelected:NO animated:animated];
+//}
 
 - (UIImageView *)productImageView {
     if (!_productImageView) {

@@ -28,6 +28,7 @@ static NSString *kProductCellIdentifier = @"kProductCellIdentifier";
     self.tableView.delegate = self;
     self.tableView.rowHeight = 140;
     self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerClass:[KRProductCell class] forCellReuseIdentifier:kProductCellIdentifier];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pageTitleViewToTop) name:@"HomeHeaderViewToTopNotification" object:nil];
@@ -58,10 +59,10 @@ static NSString *kProductCellIdentifier = @"kProductCellIdentifier";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kProductCellIdentifier forIndexPath:indexPath];
-    if (cell == nil) {
-        cell = [[KRProductCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kProductCellIdentifier];
-    }
-//    cell.textLabel.text = [NSString stringWithFormat:@"第%zd行",indexPath.row];
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    if (cell == nil) {
+//        cell = [[KRProductCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kProductCellIdentifier];
+//    }
     return cell;
 }
 

@@ -47,6 +47,22 @@
 		165DD9C11FF5F1330032B153 /* KRStoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 165DD9C01FF5F1330032B153 /* KRStoreCell.m */; };
 		165DD9C41FF62D530032B153 /* KRProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 165DD9C31FF62D530032B153 /* KRProductCell.m */; };
 		165DD9C71FF637DE0032B153 /* KRCustomPriceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 165DD9C61FF637DE0032B153 /* KRCustomPriceView.m */; };
+		1683E8591FFB228700D97BE9 /* LXLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1683E8581FFB228700D97BE9 /* LXLocationManager.m */; };
+		1683E85B1FFB2C4800D97BE9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1683E85A1FFB2C4800D97BE9 /* CoreLocation.framework */; };
+		1683E8651FFB3B3700D97BE9 /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1683E8631FFB3B3700D97BE9 /* AMapLocationKit.framework */; };
+		1683E8671FFB3BBB00D97BE9 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1683E8661FFB3BBB00D97BE9 /* JavaScriptCore.framework */; };
+		1683E8691FFB3BCB00D97BE9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1683E8681FFB3BCB00D97BE9 /* SystemConfiguration.framework */; };
+		1683E86B1FFB3BD200D97BE9 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1683E86A1FFB3BD200D97BE9 /* CoreTelephony.framework */; };
+		1683E86D1FFB3BEA00D97BE9 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1683E86C1FFB3BEA00D97BE9 /* libz.tbd */; };
+		1683E86F1FFB3BF900D97BE9 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1683E86E1FFB3BF900D97BE9 /* libc++.tbd */; };
+		1683E8711FFB3C0F00D97BE9 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1683E8701FFB3C0E00D97BE9 /* libstdc++.6.0.9.tbd */; };
+		1683E8731FFB3C1700D97BE9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1683E8721FFB3C1700D97BE9 /* Security.framework */; };
+		1683E8751FFB567A00D97BE9 /* AMapFoundationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1683E8741FFB567A00D97BE9 /* AMapFoundationKit.framework */; };
+		1683E8781FFB56D300D97BE9 /* GeoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1683E8771FFB56D300D97BE9 /* GeoManager.m */; };
+		1683E87B1FFB5FBC00D97BE9 /* KRHomeNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1683E87A1FFB5FBC00D97BE9 /* KRHomeNavBar.m */; };
+		1683E8CA1FFCA90600D97BE9 /* KRCitiesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1683E8C91FFCA90600D97BE9 /* KRCitiesController.m */; };
+		1683E8D11FFCDD0700D97BE9 /* KRCityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1683E8D01FFCDD0600D97BE9 /* KRCityCell.m */; };
+		1683E8D41FFCDD2600D97BE9 /* KRCitiesHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1683E8D31FFCDD2600D97BE9 /* KRCitiesHeaderView.m */; };
 		4C6B8AD50ACAEFFC15BC9E4E /* libPods-KRHome.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3209ED418AD622D6C35438B7 /* libPods-KRHome.a */; };
 /* End PBXBuildFile section */
 
@@ -149,6 +165,28 @@
 		165DD9C31FF62D530032B153 /* KRProductCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRProductCell.m; sourceTree = "<group>"; };
 		165DD9C51FF637DE0032B153 /* KRCustomPriceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRCustomPriceView.h; sourceTree = "<group>"; };
 		165DD9C61FF637DE0032B153 /* KRCustomPriceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRCustomPriceView.m; sourceTree = "<group>"; };
+		1683E8571FFB228700D97BE9 /* LXLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXLocationManager.h; sourceTree = "<group>"; };
+		1683E8581FFB228700D97BE9 /* LXLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXLocationManager.m; sourceTree = "<group>"; };
+		1683E85A1FFB2C4800D97BE9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1683E8631FFB3B3700D97BE9 /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
+		1683E8661FFB3BBB00D97BE9 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		1683E8681FFB3BCB00D97BE9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1683E86A1FFB3BD200D97BE9 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		1683E86C1FFB3BEA00D97BE9 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		1683E86E1FFB3BF900D97BE9 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		1683E8701FFB3C0E00D97BE9 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		1683E8721FFB3C1700D97BE9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1683E8741FFB567A00D97BE9 /* AMapFoundationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapFoundationKit.framework; sourceTree = "<group>"; };
+		1683E8761FFB56D300D97BE9 /* GeoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeoManager.h; sourceTree = "<group>"; };
+		1683E8771FFB56D300D97BE9 /* GeoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeoManager.m; sourceTree = "<group>"; };
+		1683E8791FFB5FBC00D97BE9 /* KRHomeNavBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRHomeNavBar.h; sourceTree = "<group>"; };
+		1683E87A1FFB5FBC00D97BE9 /* KRHomeNavBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRHomeNavBar.m; sourceTree = "<group>"; };
+		1683E8C81FFCA90600D97BE9 /* KRCitiesController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRCitiesController.h; sourceTree = "<group>"; };
+		1683E8C91FFCA90600D97BE9 /* KRCitiesController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRCitiesController.m; sourceTree = "<group>"; };
+		1683E8CF1FFCDD0600D97BE9 /* KRCityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRCityCell.h; sourceTree = "<group>"; };
+		1683E8D01FFCDD0600D97BE9 /* KRCityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCityCell.m; sourceTree = "<group>"; };
+		1683E8D21FFCDD2600D97BE9 /* KRCitiesHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRCitiesHeaderView.h; sourceTree = "<group>"; };
+		1683E8D31FFCDD2600D97BE9 /* KRCitiesHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRCitiesHeaderView.m; sourceTree = "<group>"; };
 		3209ED418AD622D6C35438B7 /* libPods-KRHome.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KRHome.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4148B64431B1DE4CB1D43157 /* Pods-KRHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KRHome.release.xcconfig"; path = "Pods/Target Support Files/Pods-KRHome/Pods-KRHome.release.xcconfig"; sourceTree = "<group>"; };
 		EAE8BA7F3708C2531F4D9556 /* Pods-KRHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KRHome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KRHome/Pods-KRHome.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +197,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1683E8751FFB567A00D97BE9 /* AMapFoundationKit.framework in Frameworks */,
+				1683E8731FFB3C1700D97BE9 /* Security.framework in Frameworks */,
+				1683E8711FFB3C0F00D97BE9 /* libstdc++.6.0.9.tbd in Frameworks */,
+				1683E86F1FFB3BF900D97BE9 /* libc++.tbd in Frameworks */,
+				1683E86D1FFB3BEA00D97BE9 /* libz.tbd in Frameworks */,
+				1683E85B1FFB2C4800D97BE9 /* CoreLocation.framework in Frameworks */,
+				1683E86B1FFB3BD200D97BE9 /* CoreTelephony.framework in Frameworks */,
+				1683E8691FFB3BCB00D97BE9 /* SystemConfiguration.framework in Frameworks */,
+				1683E8671FFB3BBB00D97BE9 /* JavaScriptCore.framework in Frameworks */,
+				1683E8651FFB3B3700D97BE9 /* AMapLocationKit.framework in Frameworks */,
 				4C6B8AD50ACAEFFC15BC9E4E /* libPods-KRHome.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +260,8 @@
 				1653486B1FF378E300DC98AE /* NewPagedFlowView */,
 				1653478C1FF1F1D300DC98AE /* MJRefresh */,
 				165347881FF1EDF100DC98AE /* SPPageMenu */,
+				1683E8561FFB1FFD00D97BE9 /* Location */,
+				1683E85C1FFB3A5F00D97BE9 /* GeoModule */,
 				1615A4781FDE93F800AC5780 /* LaunchScreen.storyboard */,
 				1615A4CE1FDFB4B300AC5780 /* Assets.xcassets */,
 				1615A47B1FDE93F800AC5780 /* Info.plist */,
@@ -242,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				1615A4D01FDFB53400AC5780 /* Targets */,
+				1683E8C41FFCA78A00D97BE9 /* Cities */,
 				1615A4A81FDF777700AC5780 /* Home */,
 			);
 			path = Classes;
@@ -289,6 +340,8 @@
 				165DD9BD1FF5D4610032B153 /* KRPicNavsView.m */,
 				165DD9C51FF637DE0032B153 /* KRCustomPriceView.h */,
 				165DD9C61FF637DE0032B153 /* KRCustomPriceView.m */,
+				1683E8791FFB5FBC00D97BE9 /* KRHomeNavBar.h */,
+				1683E87A1FFB5FBC00D97BE9 /* KRHomeNavBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -437,9 +490,90 @@
 			path = EllipsePageControl;
 			sourceTree = "<group>";
 		};
+		1683E8561FFB1FFD00D97BE9 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				1683E8571FFB228700D97BE9 /* LXLocationManager.h */,
+				1683E8581FFB228700D97BE9 /* LXLocationManager.m */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		1683E85C1FFB3A5F00D97BE9 /* GeoModule */ = {
+			isa = PBXGroup;
+			children = (
+				1683E8761FFB56D300D97BE9 /* GeoManager.h */,
+				1683E8771FFB56D300D97BE9 /* GeoManager.m */,
+				1683E8611FFB3B3700D97BE9 /* libs */,
+			);
+			path = GeoModule;
+			sourceTree = "<group>";
+		};
+		1683E8611FFB3B3700D97BE9 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				1683E8741FFB567A00D97BE9 /* AMapFoundationKit.framework */,
+				1683E8631FFB3B3700D97BE9 /* AMapLocationKit.framework */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		1683E8C41FFCA78A00D97BE9 /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+				1683E8C51FFCA78A00D97BE9 /* Controller */,
+				1683E8C61FFCA78A00D97BE9 /* Model */,
+				1683E8C71FFCA78A00D97BE9 /* View */,
+			);
+			path = Cities;
+			sourceTree = "<group>";
+		};
+		1683E8C51FFCA78A00D97BE9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1683E8C81FFCA90600D97BE9 /* KRCitiesController.h */,
+				1683E8C91FFCA90600D97BE9 /* KRCitiesController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1683E8C61FFCA78A00D97BE9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1683E8C71FFCA78A00D97BE9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1683E8CE1FFCDD0600D97BE9 /* Cell */,
+				1683E8D21FFCDD2600D97BE9 /* KRCitiesHeaderView.h */,
+				1683E8D31FFCDD2600D97BE9 /* KRCitiesHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1683E8CE1FFCDD0600D97BE9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1683E8CF1FFCDD0600D97BE9 /* KRCityCell.h */,
+				1683E8D01FFCDD0600D97BE9 /* KRCityCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		669671A9300FB31C8DA60FB7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1683E8721FFB3C1700D97BE9 /* Security.framework */,
+				1683E8701FFB3C0E00D97BE9 /* libstdc++.6.0.9.tbd */,
+				1683E86E1FFB3BF900D97BE9 /* libc++.tbd */,
+				1683E86C1FFB3BEA00D97BE9 /* libz.tbd */,
+				1683E86A1FFB3BD200D97BE9 /* CoreTelephony.framework */,
+				1683E8681FFB3BCB00D97BE9 /* SystemConfiguration.framework */,
+				1683E8661FFB3BBB00D97BE9 /* JavaScriptCore.framework */,
+				1683E85A1FFB2C4800D97BE9 /* CoreLocation.framework */,
 				3209ED418AD622D6C35438B7 /* libPods-KRHome.a */,
 			);
 			name = Frameworks;
@@ -654,6 +788,7 @@
 				165DD9C41FF62D530032B153 /* KRProductCell.m in Sources */,
 				165347841FF1E02600DC98AE /* KRContainerTableView.m in Sources */,
 				165348701FF378E300DC98AE /* NewPagedFlowView.m in Sources */,
+				1683E8CA1FFCA90600D97BE9 /* KRCitiesController.m in Sources */,
 				165347BF1FF1F1D300DC98AE /* MJRefreshHeader.m in Sources */,
 				165347BC1FF1F1D300DC98AE /* MJRefreshBackFooter.m in Sources */,
 				165348711FF378E300DC98AE /* PGIndexBannerSubiew.m in Sources */,
@@ -661,15 +796,20 @@
 				1615A47D1FDE93F800AC5780 /* main.m in Sources */,
 				165347C01FF1F1D300DC98AE /* MJRefreshAutoGifFooter.m in Sources */,
 				1615A4D31FDFB59400AC5780 /* Target_KRHome.m in Sources */,
+				1683E8591FFB228700D97BE9 /* LXLocationManager.m in Sources */,
 				165347CB1FF1F1D300DC98AE /* NSBundle+MJRefresh.m in Sources */,
+				1683E8D41FFCDD2600D97BE9 /* KRCitiesHeaderView.m in Sources */,
 				165347CC1FF1F1D300DC98AE /* UIScrollView+MJExtension.m in Sources */,
 				1615A46F1FDE93F800AC5780 /* AppDelegate.m in Sources */,
 				165347BE1FF1F1D300DC98AE /* MJRefreshFooter.m in Sources */,
 				165DD9BE1FF5D4610032B153 /* KRPicNavsView.m in Sources */,
 				165347BD1FF1F1D300DC98AE /* MJRefreshComponent.m in Sources */,
+				1683E8781FFB56D300D97BE9 /* GeoManager.m in Sources */,
+				1683E8D11FFCDD0700D97BE9 /* KRCityCell.m in Sources */,
 				165347C31FF1F1D300DC98AE /* MJRefreshBackGifFooter.m in Sources */,
 				165347C81FF1F1D300DC98AE /* MJRefreshStateHeader.m in Sources */,
 				165347C51FF1F1D300DC98AE /* MJRefreshBackStateFooter.m in Sources */,
+				1683E87B1FFB5FBC00D97BE9 /* KRHomeNavBar.m in Sources */,
 				165347C71FF1F1D300DC98AE /* MJRefreshNormalHeader.m in Sources */,
 				165347C11FF1F1D300DC98AE /* MJRefreshAutoNormalFooter.m in Sources */,
 				165348741FF37B4000DC98AE /* KRCustomBannerView.m in Sources */,
@@ -833,11 +973,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8TVSF6Q9MU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KRHome/GeoModule",
+					"$(PROJECT_DIR)/KRHome/GeoModule/libs",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Pods/KRPublishLibrary/KRPublishLibrary/KRPublishLibrary/PrefixHeader.pch/";
 				INFOPLIST_FILE = KRHome/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kinrain.KRHome;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinrain.user;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -850,11 +995,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8TVSF6Q9MU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KRHome/GeoModule",
+					"$(PROJECT_DIR)/KRHome/GeoModule/libs",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Pods/KRPublishLibrary/KRPublishLibrary/KRPublishLibrary/PrefixHeader.pch/";
 				INFOPLIST_FILE = KRHome/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kinrain.KRHome;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinrain.user;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
