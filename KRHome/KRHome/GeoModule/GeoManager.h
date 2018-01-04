@@ -10,6 +10,8 @@
 
 @interface GeoManager : NSObject
 
++ (instancetype)sharedInstance;
+
 - (void)configure:(NSString *)apiKey;
 
 - (void)requestLocationWithReGeocode:(BOOL)withReGeocode completionBlock:(void (^)(NSDictionary *location, NSError *error))locationBlock;

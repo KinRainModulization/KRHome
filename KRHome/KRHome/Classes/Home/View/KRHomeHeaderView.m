@@ -7,9 +7,9 @@
 //
 
 #import "KRHomeHeaderView.h"
-#import "NewPagedFlowView.h"
 #import "KRCustomBannerView.h"
-#import "EllipsePageControl.h"
+#import <NewPagedFlowView.h>
+#import <EllipsePageControl.h>
 #import "KRPicNavsView.h"
 #import "KRStoreCell.h"
 

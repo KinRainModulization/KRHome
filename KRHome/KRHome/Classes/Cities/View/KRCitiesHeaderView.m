@@ -64,7 +64,45 @@
 }
 
 - (void)locateCityBtnClick {
-    MLog(@"locateCityBtnClick");
+    self.locateCityBlock();
+}
+
+- (void)locateCity:(NSString *)city withLocationStatus:(LocationStatus)status {
+    NSString *contentStr = city;
+    NSString *subtitle = nil;
+    UIImage *iconView = nil;
+    if (status == LocationCityStatusDefault) {
+        contentStr = @"定位中...";
+    }
+    else if (status == LocationCityStatusServing) {
+        iconView = [UIImage imageNamed:@"ic_unlocated"];
+    }
+    else if (status == LocationCityStatusNotServing) {
+        iconView = [UIImage imageNamed:@"ic_located"];
+        subtitle = @"暂未开通服务，敬请期待";
+        [self.locateCityBtn setTitleColor:RGB(204, 204, 204) forState:UIControlStateNormal];
+        self.locateCityBtn.userInteractionEnabled = NO;
+    }
+    else {
+        contentStr = @"重试";
+        subtitle = @"定位失败，点击重试";
+        iconView = [UIImage imageNamed:@"ic_unlocated"];
+    }
+    
+    [self.locateCityBtn setTitle:contentStr forState:UIControlStateNormal];
+    [self.locateCityBtn setImage:iconView forState:UIControlStateNormal];
+    self.locateCityBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 5);
+    [self.locateCityBtn sizeToFit];
+    [_locateCityBtn mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(_locateCityBtn.width+40);
+    }];
+
+    self.subtitleLabel.text = subtitle;
+}
+
+- (void)setCurrentCity:(NSString *)currentCity {
+    _currentCity = currentCity;
+    self.currentCityLabel.text = [NSString stringWithFormat:@"当前：%@",currentCity];
 }
 
 - (UILabel *)currentCityLabel {
@@ -76,9 +114,7 @@
 
 - (UIButton *)locateCityBtn {
     if (!_locateCityBtn) {
-        _locateCityBtn = [UIButton buttonWithCornerRadius:15 title:@"广州" fontSize:12 titleColor:GLOBAL_COLOR backgroundColor:RGB(245, 245, 245) target:self action:@selector(locateCityBtnClick)];
-        _locateCityBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 5);
-        [_locateCityBtn setImage:[UIImage imageNamed:@"ic_unlocated"] forState:UIControlStateNormal];
+        _locateCityBtn = [UIButton buttonWithCornerRadius:15 title:@"" fontSize:12 titleColor:GLOBAL_COLOR backgroundColor:RGB(245, 245, 245) target:self action:@selector(locateCityBtnClick)];
     }
     return _locateCityBtn;
 }

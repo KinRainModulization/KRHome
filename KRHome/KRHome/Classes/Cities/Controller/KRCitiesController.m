@@ -9,17 +9,21 @@
 #import "KRCitiesController.h"
 #import "KRCityCell.h"
 #import "KRCitiesHeaderView.h"
+#import "GeoManager.h"
+
+#define kCurrentCityKey @"CurrentCity"
 
 static NSString *kCityCellIdentifier = @"kCityCellIdentifier";
 static const CGFloat kCitiesHeaderHeight = 148;
 
 @interface KRCitiesController () <UITableViewDelegate,UITableViewDataSource>
+
 @property (nonatomic, strong) NSArray *cities;
 @property (nonatomic, strong) UITableView *citiesTableView;
 @property (nonatomic, strong) KRCitiesHeaderView *citiesHeaderView;
-@end
-
-@interface KRCitiesController ()
+@property (nonatomic, assign) LocationStatus locationStatus;
+@property (nonatomic, strong) NSDictionary *currentCity;
+@property (nonatomic, strong) NSDictionary *locatedCity;
 
 @end
 
@@ -41,9 +45,82 @@ static const CGFloat kCitiesHeaderHeight = 148;
     
     [self.view addSubview:self.citiesTableView];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    [self locate];
+}
+
+- (void)locate {
+    self.locationStatus = LocationCityStatusDefault;
+
+    [[GeoManager sharedInstance] requestLocationWithReGeocode:YES completionBlock:^(NSDictionary *location, NSError *error) {
+        if (error) {
+            if ([error.userInfo[@"info"] isEqualToString:@"AuthorizationStatusDenied"]) {//不允许定位
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"您还未开启定位" message:@"美丽从定位开始，请在设置>轻雨>定位服务中开启" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"暂不" style:UIAlertActionStyleCancel handler:nil];
+                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"去设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+                    if( [[UIApplication sharedApplication] canOpenURL:url] ) {
+                        [[UIApplication sharedApplication] openURL:url];
+                    }
+                }];
+                [alertController addAction:cancelAction];
+                [alertController addAction:okAction];
+                [self presentViewController:alertController animated:YES completion:nil];
+            }
+            
+            self.locationStatus = LocationCityStatusFailure;
+            return;
+        }
+        
+        NSString *locatedCity = [location[@"city"] stringByReplacingOccurrencesOfString:@"市" withString:@""];
+        NSDictionary *servingCity = nil;
+        for (NSDictionary *citySectionData in self.cities) {
+            for (NSDictionary *city in citySectionData[@"cities"]) {
+                if ([locatedCity isEqualToString:city[@"city"]]) {
+                    servingCity = city;
+                }
+            }
+        }
+        
+        self.locatedCity = servingCity ? servingCity : @{@"city":location[@"city"],@"cityCode":location[@"adcode"]};
+        
+        if (servingCity) {
+            self.locationStatus = LocationCityStatusServing;
+            if (![self.currentCity[@"city"] isEqualToString:servingCity[@"city"]]) {
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self reloadHomeDataWithCity:servingCity];
+                });
+            }
+        }
+        else {
+            self.locationStatus = LocationCityStatusNotServing;
+        }
+    }];
+}
+
+- (void)reloadHomeDataWithCity:(NSDictionary *)city {
+    [self.navigationController popViewControllerAnimated:YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:HOME_CHANGE_CITY object:nil userInfo:city];
+}
+
+#pragma mark - Action
+
+- (void)handleLocateCityClick {
+    if (_locationStatus == LocationCityStatusFailure) {
+        [self locate];
+    }
+    else if (_locationStatus == LocationCityStatusServing) {
+        [self reloadHomeDataWithCity:self.locatedCity];
+    }
+    
 }
 
 #pragma mark - Table view data source
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSArray *sectionData = self.cities[indexPath.section][@"cities"];
+    [self reloadHomeDataWithCity:sectionData[indexPath.row]];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.cities.count;
@@ -66,6 +143,10 @@ static const CGFloat kCitiesHeaderHeight = 148;
     contentView.backgroundColor = [UIColor whiteColor];
     if (section == 0) {
         [contentView addSubview:self.citiesHeaderView];
+        WEAK_SELF;
+        self.citiesHeaderView.locateCityBlock = ^{
+            [weakSelf handleLocateCityClick];
+        };
     }
     UILabel *cityHeaderLabel = [UILabel labelWithText:self.cities[section][@"head"] textColor:GLOBAL_COLOR fontSize:16];
     cityHeaderLabel.font = [UIFont boldSystemFontOfSize:16];
@@ -86,6 +167,20 @@ static const CGFloat kCitiesHeaderHeight = 148;
     return 0.1;
 }
 
+#pragma mark - Setter/Getter
+
+- (void)setLocationStatus:(LocationStatus)locationStatus {
+    _locationStatus = locationStatus;
+    [self.citiesHeaderView locateCity:_locatedCity ? _locatedCity[@"city"] : nil withLocationStatus:locationStatus];
+}
+
+- (NSDictionary *)currentCity {
+    if (!_currentCity) {
+        _currentCity = [PublicTools getDataFromUserDefaultsWithKey:kCurrentCityKey];
+    }
+    return _currentCity;
+}
+
 - (UITableView *)citiesTableView {
     if (!_citiesTableView) {
         _citiesTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
@@ -102,6 +197,7 @@ static const CGFloat kCitiesHeaderHeight = 148;
 - (KRCitiesHeaderView *)citiesHeaderView {
     if (!_citiesHeaderView) {
         _citiesHeaderView = [[KRCitiesHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, kCitiesHeaderHeight)];
+        _citiesHeaderView.currentCity = self.currentCity[@"city"];
     }
     return _citiesHeaderView;
 }

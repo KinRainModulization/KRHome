@@ -16,14 +16,23 @@
 
 @implementation GeoManager
 
++ (instancetype)sharedInstance {
+    static GeoManager *geoManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        geoManager = [[self alloc] init];
+    });
+    return geoManager;
+}
+
 - (void)configure:(NSString *)apiKey {
     [AMapServices sharedServices].apiKey = apiKey;
     
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _manager = [[AMapLocationManager alloc] init];
-    });
-    
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        _manager = [[AMapLocationManager alloc] init];
+//    });
+    _manager = [[AMapLocationManager alloc] init];
     _manager.desiredAccuracy = kCLLocationAccuracyBest;
     _manager.locationTimeout = 10;
     _manager.reGeocodeTimeout = 5;

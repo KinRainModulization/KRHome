@@ -40,8 +40,6 @@ static NSString *kPageScrollCellIdentifier = @"kPageScrollCellIdentifier";
 
 @property (nonatomic, strong) UIScrollView *childVCScrollView;
 
-@property (nonatomic, strong) GeoManager *locationManager;
-
 @property (nonatomic, strong) NSDictionary *city;
 @end
 
@@ -50,20 +48,18 @@ static NSString *kPageScrollCellIdentifier = @"kPageScrollCellIdentifier";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.locationManager configure:@"49722449b155b0607f20176277f556bc"];
+    [[GeoManager sharedInstance] configure:@"49722449b155b0607f20176277f556bc"];
 
     [self prepareUI];
     
     [self locateCity];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(subTableViewDidScroll:) name:@"HomeSubTableViewDidScrollNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(subTableViewDidScroll:) name:HOME_SUB_TABLEVIEW_SCROLL object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleChangeCity:) name:HOME_CHANGE_CITY object:nil];
 }
 
 - (void)prepareUI {
     // navBar
-//    NSDictionary *currentCity = [PublicTools getDataFromUserDefaultsWithKey:kCurrentCityKey];
-//    NSString *title = currentCity ? currentCity[@"city"] : @"定位中...";
-//    self.navBar = [[KRHomeNavBar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, NAV_BAR_HEIGHT) withTitle:title];
     self.navigationItem.titleView = self.navBar;
     WEAK_SELF;
     self.navBar.citySelectBlock = ^{
@@ -86,7 +82,8 @@ static NSString *kPageScrollCellIdentifier = @"kPageScrollCellIdentifier";
         
         NSDictionary *defaultCity = @{@"code":@"500100",@"city":@"沈阳"};
         NSArray *servingCities = @[@{@"code":@"100010",@"city":@"北京"},@{@"code":@"20000",@"city":@"广州"}];
-        [self.locationManager requestLocationWithReGeocode:YES completionBlock:^(NSDictionary *location, NSError *error) {            
+        
+        [[GeoManager sharedInstance] requestLocationWithReGeocode:YES completionBlock:^(NSDictionary *location, NSError *error) {
             NSDictionary *currentCity = [PublicTools getDataFromUserDefaultsWithKey:kCurrentCityKey];
             
             if (error) {
@@ -182,6 +179,11 @@ static NSString *kPageScrollCellIdentifier = @"kPageScrollCellIdentifier";
     }
 }
 
+- (void)handleChangeCity:(NSNotification *)notification {
+    MLog(@"notification=%@",notification.userInfo);
+    self.city = notification.userInfo;
+}
+
 #pragma mark - UITableViewDataSource / Delegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -248,10 +250,9 @@ static NSString *kPageScrollCellIdentifier = @"kPageScrollCellIdentifier";
 
 - (void)setCity:(NSDictionary *)city {
     _city = city;
-    MLog(@"city=%@",city);
     [PublicTools setData:city toUserDefaultsKey:kCurrentCityKey];
     self.navBar.cityName = city[@"city"];
-    // 重新加载数据
+    MLog(@"重新加载数据");
 }
 
 - (KRHomeNavBar *)navBar {
@@ -315,13 +316,6 @@ static NSString *kPageScrollCellIdentifier = @"kPageScrollCellIdentifier";
         _pageArray = @[@"标题1",@"标题2",@"标题3",@"标题4",@"标题5",@"标题6"];
     }
     return _pageArray;
-}
-
-- (GeoManager *)locationManager {
-    if (!_locationManager) {
-        _locationManager = [[GeoManager alloc] init];
-    }
-    return _locationManager;
 }
 
 - (void)dealloc {

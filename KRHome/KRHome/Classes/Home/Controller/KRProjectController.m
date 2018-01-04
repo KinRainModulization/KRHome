@@ -50,7 +50,7 @@ static NSString *kProductCellIdentifier = @"kProductCellIdentifier";
 #pragma mark - UITableViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"HomeSubTableViewDidScrollNotification" object:scrollView];
+    [[NSNotificationCenter defaultCenter] postNotificationName:HOME_SUB_TABLEVIEW_SCROLL object:scrollView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

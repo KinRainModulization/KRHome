@@ -17,7 +17,6 @@
 		1615A4D31FDFB59400AC5780 /* Target_KRHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 1615A4D21FDFB59400AC5780 /* Target_KRHome.m */; };
 		165347841FF1E02600DC98AE /* KRContainerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 165347831FF1E02600DC98AE /* KRContainerTableView.m */; };
 		165347871FF1E64A00DC98AE /* KRHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 165347861FF1E64A00DC98AE /* KRHomeHeaderView.m */; };
-		1653478B1FF1EDF100DC98AE /* SPPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1653478A1FF1EDF100DC98AE /* SPPageMenu.m */; };
 		165347BB1FF1F1D300DC98AE /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1653478F1FF1F1D300DC98AE /* MJRefreshAutoFooter.m */; };
 		165347BC1FF1F1D300DC98AE /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 165347911FF1F1D300DC98AE /* MJRefreshBackFooter.m */; };
 		165347BD1FF1F1D300DC98AE /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 165347931FF1F1D300DC98AE /* MJRefreshComponent.m */; };
@@ -39,15 +38,11 @@
 		165347CD1FF1F1D300DC98AE /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 165347B81FF1F1D300DC98AE /* UIScrollView+MJRefresh.m */; };
 		165347CE1FF1F1D300DC98AE /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 165347BA1FF1F1D300DC98AE /* UIView+MJExtension.m */; };
 		165348541FF2241500DC98AE /* KRProjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 165348531FF2241500DC98AE /* KRProjectController.m */; };
-		165348701FF378E300DC98AE /* NewPagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1653486D1FF378E300DC98AE /* NewPagedFlowView.m */; };
-		165348711FF378E300DC98AE /* PGIndexBannerSubiew.m in Sources */ = {isa = PBXBuildFile; fileRef = 1653486F1FF378E300DC98AE /* PGIndexBannerSubiew.m */; };
 		165348741FF37B4000DC98AE /* KRCustomBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 165348731FF37B4000DC98AE /* KRCustomBannerView.m */; };
-		165348781FF3800C00DC98AE /* EllipsePageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 165348771FF3800B00DC98AE /* EllipsePageControl.m */; };
 		165DD9BE1FF5D4610032B153 /* KRPicNavsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 165DD9BD1FF5D4610032B153 /* KRPicNavsView.m */; };
 		165DD9C11FF5F1330032B153 /* KRStoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 165DD9C01FF5F1330032B153 /* KRStoreCell.m */; };
 		165DD9C41FF62D530032B153 /* KRProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 165DD9C31FF62D530032B153 /* KRProductCell.m */; };
 		165DD9C71FF637DE0032B153 /* KRCustomPriceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 165DD9C61FF637DE0032B153 /* KRCustomPriceView.m */; };
-		1683E8591FFB228700D97BE9 /* LXLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1683E8581FFB228700D97BE9 /* LXLocationManager.m */; };
 		1683E85B1FFB2C4800D97BE9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1683E85A1FFB2C4800D97BE9 /* CoreLocation.framework */; };
 		1683E8651FFB3B3700D97BE9 /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1683E8631FFB3B3700D97BE9 /* AMapLocationKit.framework */; };
 		1683E8671FFB3BBB00D97BE9 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1683E8661FFB3BBB00D97BE9 /* JavaScriptCore.framework */; };
@@ -63,6 +58,7 @@
 		1683E8CA1FFCA90600D97BE9 /* KRCitiesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1683E8C91FFCA90600D97BE9 /* KRCitiesController.m */; };
 		1683E8D11FFCDD0700D97BE9 /* KRCityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1683E8D01FFCDD0600D97BE9 /* KRCityCell.m */; };
 		1683E8D41FFCDD2600D97BE9 /* KRCitiesHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1683E8D31FFCDD2600D97BE9 /* KRCitiesHeaderView.m */; };
+		1683E8D81FFE22E000D97BE9 /* SPPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1683E8D71FFE22E000D97BE9 /* SPPageMenu.m */; };
 		4C6B8AD50ACAEFFC15BC9E4E /* libPods-KRHome.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3209ED418AD622D6C35438B7 /* libPods-KRHome.a */; };
 /* End PBXBuildFile section */
 
@@ -105,8 +101,6 @@
 		165347831FF1E02600DC98AE /* KRContainerTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRContainerTableView.m; sourceTree = "<group>"; };
 		165347851FF1E64A00DC98AE /* KRHomeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRHomeHeaderView.h; sourceTree = "<group>"; };
 		165347861FF1E64A00DC98AE /* KRHomeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRHomeHeaderView.m; sourceTree = "<group>"; };
-		165347891FF1EDF100DC98AE /* SPPageMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPageMenu.h; sourceTree = "<group>"; };
-		1653478A1FF1EDF100DC98AE /* SPPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPPageMenu.m; sourceTree = "<group>"; };
 		1653478E1FF1F1D300DC98AE /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		1653478F1FF1F1D300DC98AE /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		165347901FF1F1D300DC98AE /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -149,14 +143,8 @@
 		165347BA1FF1F1D300DC98AE /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		165348521FF2241500DC98AE /* KRProjectController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KRProjectController.h; path = KRHome/Classes/Home/Controller/KRProjectController.h; sourceTree = SOURCE_ROOT; };
 		165348531FF2241500DC98AE /* KRProjectController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KRProjectController.m; path = KRHome/Classes/Home/Controller/KRProjectController.m; sourceTree = SOURCE_ROOT; };
-		1653486C1FF378E300DC98AE /* NewPagedFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPagedFlowView.h; sourceTree = "<group>"; };
-		1653486D1FF378E300DC98AE /* NewPagedFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPagedFlowView.m; sourceTree = "<group>"; };
-		1653486E1FF378E300DC98AE /* PGIndexBannerSubiew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGIndexBannerSubiew.h; sourceTree = "<group>"; };
-		1653486F1FF378E300DC98AE /* PGIndexBannerSubiew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGIndexBannerSubiew.m; sourceTree = "<group>"; };
 		165348721FF37B4000DC98AE /* KRCustomBannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRCustomBannerView.h; sourceTree = "<group>"; };
 		165348731FF37B4000DC98AE /* KRCustomBannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRCustomBannerView.m; sourceTree = "<group>"; };
-		165348761FF3800B00DC98AE /* EllipsePageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EllipsePageControl.h; sourceTree = "<group>"; };
-		165348771FF3800B00DC98AE /* EllipsePageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EllipsePageControl.m; sourceTree = "<group>"; };
 		165DD9BC1FF5D4610032B153 /* KRPicNavsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRPicNavsView.h; sourceTree = "<group>"; };
 		165DD9BD1FF5D4610032B153 /* KRPicNavsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRPicNavsView.m; sourceTree = "<group>"; };
 		165DD9BF1FF5F1330032B153 /* KRStoreCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRStoreCell.h; sourceTree = "<group>"; };
@@ -165,8 +153,6 @@
 		165DD9C31FF62D530032B153 /* KRProductCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRProductCell.m; sourceTree = "<group>"; };
 		165DD9C51FF637DE0032B153 /* KRCustomPriceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRCustomPriceView.h; sourceTree = "<group>"; };
 		165DD9C61FF637DE0032B153 /* KRCustomPriceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRCustomPriceView.m; sourceTree = "<group>"; };
-		1683E8571FFB228700D97BE9 /* LXLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXLocationManager.h; sourceTree = "<group>"; };
-		1683E8581FFB228700D97BE9 /* LXLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXLocationManager.m; sourceTree = "<group>"; };
 		1683E85A1FFB2C4800D97BE9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1683E8631FFB3B3700D97BE9 /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
 		1683E8661FFB3BBB00D97BE9 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -187,6 +173,8 @@
 		1683E8D01FFCDD0600D97BE9 /* KRCityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRCityCell.m; sourceTree = "<group>"; };
 		1683E8D21FFCDD2600D97BE9 /* KRCitiesHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRCitiesHeaderView.h; sourceTree = "<group>"; };
 		1683E8D31FFCDD2600D97BE9 /* KRCitiesHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRCitiesHeaderView.m; sourceTree = "<group>"; };
+		1683E8D61FFE22E000D97BE9 /* SPPageMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPageMenu.h; sourceTree = "<group>"; };
+		1683E8D71FFE22E000D97BE9 /* SPPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPPageMenu.m; sourceTree = "<group>"; };
 		3209ED418AD622D6C35438B7 /* libPods-KRHome.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KRHome.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4148B64431B1DE4CB1D43157 /* Pods-KRHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KRHome.release.xcconfig"; path = "Pods/Target Support Files/Pods-KRHome/Pods-KRHome.release.xcconfig"; sourceTree = "<group>"; };
 		EAE8BA7F3708C2531F4D9556 /* Pods-KRHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KRHome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KRHome/Pods-KRHome.debug.xcconfig"; sourceTree = "<group>"; };
@@ -256,11 +244,7 @@
 				1615A4A71FDF76CA00AC5780 /* Classes */,
 				1615A46D1FDE93F800AC5780 /* AppDelegate.h */,
 				1615A46E1FDE93F800AC5780 /* AppDelegate.m */,
-				165348751FF3800B00DC98AE /* EllipsePageControl */,
-				1653486B1FF378E300DC98AE /* NewPagedFlowView */,
 				1653478C1FF1F1D300DC98AE /* MJRefresh */,
-				165347881FF1EDF100DC98AE /* SPPageMenu */,
-				1683E8561FFB1FFD00D97BE9 /* Location */,
 				1683E85C1FFB3A5F00D97BE9 /* GeoModule */,
 				1615A4781FDE93F800AC5780 /* LaunchScreen.storyboard */,
 				1615A4CE1FDFB4B300AC5780 /* Assets.xcassets */,
@@ -329,6 +313,7 @@
 		1615A4AB1FDF777700AC5780 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1683E8D51FFE22E000D97BE9 /* SPPageMenu */,
 				165348511FF222FB00DC98AE /* Cell */,
 				165347821FF1E02600DC98AE /* KRContainerTableView.h */,
 				165347831FF1E02600DC98AE /* KRContainerTableView.m */,
@@ -353,15 +338,6 @@
 				1615A4D21FDFB59400AC5780 /* Target_KRHome.m */,
 			);
 			path = Targets;
-			sourceTree = "<group>";
-		};
-		165347881FF1EDF100DC98AE /* SPPageMenu */ = {
-			isa = PBXGroup;
-			children = (
-				165347891FF1EDF100DC98AE /* SPPageMenu.h */,
-				1653478A1FF1EDF100DC98AE /* SPPageMenu.m */,
-			);
-			path = SPPageMenu;
 			sourceTree = "<group>";
 		};
 		1653478C1FF1F1D300DC98AE /* MJRefresh */ = {
@@ -470,35 +446,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		1653486B1FF378E300DC98AE /* NewPagedFlowView */ = {
-			isa = PBXGroup;
-			children = (
-				1653486C1FF378E300DC98AE /* NewPagedFlowView.h */,
-				1653486D1FF378E300DC98AE /* NewPagedFlowView.m */,
-				1653486E1FF378E300DC98AE /* PGIndexBannerSubiew.h */,
-				1653486F1FF378E300DC98AE /* PGIndexBannerSubiew.m */,
-			);
-			path = NewPagedFlowView;
-			sourceTree = "<group>";
-		};
-		165348751FF3800B00DC98AE /* EllipsePageControl */ = {
-			isa = PBXGroup;
-			children = (
-				165348761FF3800B00DC98AE /* EllipsePageControl.h */,
-				165348771FF3800B00DC98AE /* EllipsePageControl.m */,
-			);
-			path = EllipsePageControl;
-			sourceTree = "<group>";
-		};
-		1683E8561FFB1FFD00D97BE9 /* Location */ = {
-			isa = PBXGroup;
-			children = (
-				1683E8571FFB228700D97BE9 /* LXLocationManager.h */,
-				1683E8581FFB228700D97BE9 /* LXLocationManager.m */,
-			);
-			path = Location;
-			sourceTree = "<group>";
-		};
 		1683E85C1FFB3A5F00D97BE9 /* GeoModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -561,6 +508,15 @@
 				1683E8D01FFCDD0600D97BE9 /* KRCityCell.m */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		1683E8D51FFE22E000D97BE9 /* SPPageMenu */ = {
+			isa = PBXGroup;
+			children = (
+				1683E8D61FFE22E000D97BE9 /* SPPageMenu.h */,
+				1683E8D71FFE22E000D97BE9 /* SPPageMenu.m */,
+			);
+			path = SPPageMenu;
 			sourceTree = "<group>";
 		};
 		669671A9300FB31C8DA60FB7 /* Frameworks */ = {
@@ -779,24 +735,20 @@
 				165347C21FF1F1D300DC98AE /* MJRefreshAutoStateFooter.m in Sources */,
 				165347C41FF1F1D300DC98AE /* MJRefreshBackNormalFooter.m in Sources */,
 				165347CE1FF1F1D300DC98AE /* UIView+MJExtension.m in Sources */,
-				165348781FF3800C00DC98AE /* EllipsePageControl.m in Sources */,
 				165348541FF2241500DC98AE /* KRProjectController.m in Sources */,
 				165347C61FF1F1D300DC98AE /* MJRefreshGifHeader.m in Sources */,
 				165DD9C11FF5F1330032B153 /* KRStoreCell.m in Sources */,
-				1653478B1FF1EDF100DC98AE /* SPPageMenu.m in Sources */,
 				165347CD1FF1F1D300DC98AE /* UIScrollView+MJRefresh.m in Sources */,
 				165DD9C41FF62D530032B153 /* KRProductCell.m in Sources */,
 				165347841FF1E02600DC98AE /* KRContainerTableView.m in Sources */,
-				165348701FF378E300DC98AE /* NewPagedFlowView.m in Sources */,
 				1683E8CA1FFCA90600D97BE9 /* KRCitiesController.m in Sources */,
 				165347BF1FF1F1D300DC98AE /* MJRefreshHeader.m in Sources */,
 				165347BC1FF1F1D300DC98AE /* MJRefreshBackFooter.m in Sources */,
-				165348711FF378E300DC98AE /* PGIndexBannerSubiew.m in Sources */,
 				165347CA1FF1F1D300DC98AE /* MJRefreshConst.m in Sources */,
+				1683E8D81FFE22E000D97BE9 /* SPPageMenu.m in Sources */,
 				1615A47D1FDE93F800AC5780 /* main.m in Sources */,
 				165347C01FF1F1D300DC98AE /* MJRefreshAutoGifFooter.m in Sources */,
 				1615A4D31FDFB59400AC5780 /* Target_KRHome.m in Sources */,
-				1683E8591FFB228700D97BE9 /* LXLocationManager.m in Sources */,
 				165347CB1FF1F1D300DC98AE /* NSBundle+MJRefresh.m in Sources */,
 				1683E8D41FFCDD2600D97BE9 /* KRCitiesHeaderView.m in Sources */,
 				165347CC1FF1F1D300DC98AE /* UIScrollView+MJExtension.m in Sources */,
