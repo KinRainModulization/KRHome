@@ -7,7 +7,7 @@
 //
 
 #import "KRProductCell.h"
-#import "KRCustomPriceView.h"
+#import <KRCustomPriceView.h>
 
 @interface KRProductCell ()
 

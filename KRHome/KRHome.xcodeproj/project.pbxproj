@@ -42,7 +42,6 @@
 		165DD9BE1FF5D4610032B153 /* KRPicNavsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 165DD9BD1FF5D4610032B153 /* KRPicNavsView.m */; };
 		165DD9C11FF5F1330032B153 /* KRStoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 165DD9C01FF5F1330032B153 /* KRStoreCell.m */; };
 		165DD9C41FF62D530032B153 /* KRProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 165DD9C31FF62D530032B153 /* KRProductCell.m */; };
-		165DD9C71FF637DE0032B153 /* KRCustomPriceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 165DD9C61FF637DE0032B153 /* KRCustomPriceView.m */; };
 		1683E85B1FFB2C4800D97BE9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1683E85A1FFB2C4800D97BE9 /* CoreLocation.framework */; };
 		1683E8651FFB3B3700D97BE9 /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1683E8631FFB3B3700D97BE9 /* AMapLocationKit.framework */; };
 		1683E8671FFB3BBB00D97BE9 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1683E8661FFB3BBB00D97BE9 /* JavaScriptCore.framework */; };
@@ -151,8 +150,6 @@
 		165DD9C01FF5F1330032B153 /* KRStoreCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRStoreCell.m; sourceTree = "<group>"; };
 		165DD9C21FF62D530032B153 /* KRProductCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRProductCell.h; sourceTree = "<group>"; };
 		165DD9C31FF62D530032B153 /* KRProductCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRProductCell.m; sourceTree = "<group>"; };
-		165DD9C51FF637DE0032B153 /* KRCustomPriceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRCustomPriceView.h; sourceTree = "<group>"; };
-		165DD9C61FF637DE0032B153 /* KRCustomPriceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRCustomPriceView.m; sourceTree = "<group>"; };
 		1683E85A1FFB2C4800D97BE9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1683E8631FFB3B3700D97BE9 /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
 		1683E8661FFB3BBB00D97BE9 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -323,8 +320,6 @@
 				165348731FF37B4000DC98AE /* KRCustomBannerView.m */,
 				165DD9BC1FF5D4610032B153 /* KRPicNavsView.h */,
 				165DD9BD1FF5D4610032B153 /* KRPicNavsView.m */,
-				165DD9C51FF637DE0032B153 /* KRCustomPriceView.h */,
-				165DD9C61FF637DE0032B153 /* KRCustomPriceView.m */,
 				1683E8791FFB5FBC00D97BE9 /* KRHomeNavBar.h */,
 				1683E87A1FFB5FBC00D97BE9 /* KRHomeNavBar.m */,
 			);
@@ -765,7 +760,6 @@
 				165347C71FF1F1D300DC98AE /* MJRefreshNormalHeader.m in Sources */,
 				165347C11FF1F1D300DC98AE /* MJRefreshAutoNormalFooter.m in Sources */,
 				165348741FF37B4000DC98AE /* KRCustomBannerView.m in Sources */,
-				165DD9C71FF637DE0032B153 /* KRCustomPriceView.m in Sources */,
 				1615A4AE1FDF77A900AC5780 /* KRHomeController.m in Sources */,
 				165347871FF1E64A00DC98AE /* KRHomeHeaderView.m in Sources */,
 			);
