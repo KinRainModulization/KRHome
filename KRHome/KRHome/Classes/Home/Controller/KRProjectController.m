@@ -7,7 +7,7 @@
 //
 
 #import "KRProjectController.h"
-#import "KRProductCell.h"
+#import <KRProductCell.h>
 
 #define kSubViewH SCREEN_HEIGHT - NAV_BAR_HEIGHT - kPageMenuH
 

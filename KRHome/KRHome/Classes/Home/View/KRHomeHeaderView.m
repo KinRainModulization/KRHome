@@ -48,6 +48,7 @@ static const CGFloat kStoreHeaderHeight = 50;
     pageFlowView.minimumPageAlpha = 0.4;
     pageFlowView.leftRightMargin = 30;
     pageFlowView.topBottomMargin = 0;
+    pageFlowView.autoTime = 3;
     pageFlowView.orginPageCount = self.bannerArray.count;
     pageFlowView.isOpenAutoScroll = YES;
     self.pageFlowView = pageFlowView;

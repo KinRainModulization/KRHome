@@ -41,7 +41,6 @@
 		165348741FF37B4000DC98AE /* KRCustomBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 165348731FF37B4000DC98AE /* KRCustomBannerView.m */; };
 		165DD9BE1FF5D4610032B153 /* KRPicNavsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 165DD9BD1FF5D4610032B153 /* KRPicNavsView.m */; };
 		165DD9C11FF5F1330032B153 /* KRStoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 165DD9C01FF5F1330032B153 /* KRStoreCell.m */; };
-		165DD9C41FF62D530032B153 /* KRProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 165DD9C31FF62D530032B153 /* KRProductCell.m */; };
 		1683E85B1FFB2C4800D97BE9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1683E85A1FFB2C4800D97BE9 /* CoreLocation.framework */; };
 		1683E8651FFB3B3700D97BE9 /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1683E8631FFB3B3700D97BE9 /* AMapLocationKit.framework */; };
 		1683E8671FFB3BBB00D97BE9 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1683E8661FFB3BBB00D97BE9 /* JavaScriptCore.framework */; };
@@ -148,8 +147,6 @@
 		165DD9BD1FF5D4610032B153 /* KRPicNavsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRPicNavsView.m; sourceTree = "<group>"; };
 		165DD9BF1FF5F1330032B153 /* KRStoreCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRStoreCell.h; sourceTree = "<group>"; };
 		165DD9C01FF5F1330032B153 /* KRStoreCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRStoreCell.m; sourceTree = "<group>"; };
-		165DD9C21FF62D530032B153 /* KRProductCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRProductCell.h; sourceTree = "<group>"; };
-		165DD9C31FF62D530032B153 /* KRProductCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRProductCell.m; sourceTree = "<group>"; };
 		1683E85A1FFB2C4800D97BE9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1683E8631FFB3B3700D97BE9 /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
 		1683E8661FFB3BBB00D97BE9 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -435,8 +432,6 @@
 			children = (
 				165DD9BF1FF5F1330032B153 /* KRStoreCell.h */,
 				165DD9C01FF5F1330032B153 /* KRStoreCell.m */,
-				165DD9C21FF62D530032B153 /* KRProductCell.h */,
-				165DD9C31FF62D530032B153 /* KRProductCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -734,7 +729,6 @@
 				165347C61FF1F1D300DC98AE /* MJRefreshGifHeader.m in Sources */,
 				165DD9C11FF5F1330032B153 /* KRStoreCell.m in Sources */,
 				165347CD1FF1F1D300DC98AE /* UIScrollView+MJRefresh.m in Sources */,
-				165DD9C41FF62D530032B153 /* KRProductCell.m in Sources */,
 				165347841FF1E02600DC98AE /* KRContainerTableView.m in Sources */,
 				1683E8CA1FFCA90600D97BE9 /* KRCitiesController.m in Sources */,
 				165347BF1FF1F1D300DC98AE /* MJRefreshHeader.m in Sources */,
